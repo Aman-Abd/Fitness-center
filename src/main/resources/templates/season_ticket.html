@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <link href="../static/css/price.css" rel="stylesheet"
+          th:href="@{css/price.css}" media="screen">
+    <title>Orders</title>
+</head>
+<body>
+<div sec:authorize="isAuthenticated()">
+    <form id="logoutForm" method="POST" th:action="@{/logout}">
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+    </form>
+    <nav>
+        <ul>
+            <li><p class="icon">Drugstore</p> </li>
+            <li><a href="/welcome">Home</a></li>
+            <li><a href="/admin">Admin page</a></li>
+            <li><a href="/season_ticket">Orders</a></li>
+            <li><a href="/schedule">List of medicines</a></li>
+            <li><a href="/trainer">List of pharmacies</a></li>
+            <li><a onclick="document.forms['logoutForm'].submit()">Logout</a></li>
+        </ul>
+    </nav>
+</div>
+<div class="container">
+    <h2>Orders</h2>
+    <table class="table_price">
+        <caption>List of orders</caption>
+        <tr>
+            <th>Id</th>
+            <th >Date</th>
+            <th >Price</th>
+        </tr>
+        <tr class="grey" th:each="season_ticket:${allSeasons_tickets}">
+            <td th:text="${season_ticket.season_id}"></td>
+            <td th:text="${season_ticket.season_name}"></td>
+            <td th:text="${season_ticket.price_per_day}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

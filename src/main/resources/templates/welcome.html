@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="utf-8">
+    <title>Home page</title>
+    <link href="../static/css/home.css" rel="stylesheet"
+          th:href="@{css/home.css}" media="screen" >
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+</head>
+<body>
+
+<div sec:authorize="isAuthenticated()">
+        <form id="logoutForm" method="POST" th:action="@{/logout}">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        </form>
+        <nav>
+            <ul>
+                <li><p class="icon">Drugstore</p> </li>
+                <li><a href="/welcome">Home</a></li>
+                <li><a href="/admin">Admin page</a></li>
+                <li><a href="/season_ticket">Orders</a></li>
+                <li><a href="/schedule">List of medicines</a></li>
+                <li><a href="/trainer">List of pharmacies</a></li>
+                <li><a onclick="document.forms['logoutForm'].submit()">Logout</a></li>
+            </ul>
+        </nav>
+</div>
+<div class="container">
+    <h2 class="welcome">Welcome <b><span sec:authentication="name"></span></b> ! </h2>
+<div class="block">
+    <img class="img" src="https://images.unsplash.com/photo-1585435557343-3b092031a831?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="pharmacy">
+</div>
+<div class="block">
+    <div class ="list">
+        <ol class = "rounded-list">
+            <li> <p> Online (contactless) purchase of medications</p></li>
+            <li> <p>  Internet access required only </p></li>
+            <li> <p> Delivery to any point of Almaty(home, office)</p></li>
+            <li> <p> Big database with various medicines and equipments</p></li>
+            <li> <p> Checking for the presence of this or that kind of medicine </p></li>
+            <li> <p> Call center function to make order </p></li>
+        </ol>
+    </div>
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>

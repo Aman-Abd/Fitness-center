@@ -1,0 +1,95 @@
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+    padding:0;
+    border: 0;
+}
+table{
+    width: 800px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+th{
+    background-color: #ffff66;
+    height: 50px;
+    padding: 0 30px;
+}
+
+td{
+    height: 50px;
+    padding: 0 15px;
+}
+
+.grey{
+    background-color: lightgrey;
+}
+
+.darkgrey{
+    background-color: darkgrey;
+}
+
+.container{
+    width: 1080px;
+    margin: 0 auto;
+}
+h2{
+    text-align: center;
+}
+
+li {
+    display: inline-block;
+
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: lightskyblue;
+}
+
+li a {
+    font-size: 1.2em;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 30px 50px;
+    text-decoration: none;
+}
+
+a{
+    text-decoration: none;
+    color: royalblue;
+}
+a:hover {
+    color: darkblue;
+}
+
+li a:hover {
+    background-color: dodgerblue ;
+    color: white;
+}
+.icon{
+    font-size: 1.5em;
+    padding: 0 50px;
+    font-weight: bold;
+    font-family: 'Permanent Marker', cursive;
+    color: royalblue ;
+}
+
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+    padding:0;
+    border: 0;
+}
+
+ol{
+    counter-reset: li;
+    list-style: none;
+    *list-style: decimal;
+    font: 15px 'trebuchet MS', 'lucida sans';
+    padding: 0;
+    margin-bottom: 4em;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <link href="../static/css/schedule.css" rel="stylesheet"
+          th:href="@{css/schedule.css}" media="screen">
+    <title>Pharmacies</title>
+</head>
+<body>
+<div sec:authorize="isAuthenticated()">
+    <form id="logoutForm" method="POST" th:action="@{/logout}">
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+    </form>
+    <nav>
+        <ul>
+            <li><p class="icon">Drugstore</p> </li>
+            <li><a href="/welcome">Home</a></li>
+            <li><a href="/admin">Admin page</a></li>
+            <li><a href="/season_ticket">Orders</a></li>
+            <li><a href="/schedule">List of medicines</a></li>
+            <li><a href="/trainer">List of pharmacies</a></li>
+            <li><a onclick="document.forms['logoutForm'].submit()">Logout</a></li>
+        </ul>
+    </nav>
+</div>
+<div class="container">
+    <h2>Pharmacies</h2>
+    <table>
+        <tr class="darkgrey">
+            <th>Id</th>
+            <th>Name</th>
+            <th>Address of pharmacy</th>
+        </tr>
+        <tr class="grey" th:each="trainer:${allTrainers}">
+            <td th:text="${trainer.trainer_id}"></td>
+            <td th:text="${trainer.username}"></td>
+            <td th:text="${trainer.sport}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

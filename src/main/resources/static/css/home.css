@@ -1,0 +1,123 @@
+li {
+    display: inline-block;
+
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: lightskyblue;
+}
+
+li a {
+    font-size: 1.2em;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 30px 50px;
+    text-decoration: none;
+}
+
+a{
+    text-decoration: none;
+    color: royalblue;
+}
+a:hover {
+    color: darkblue;
+}
+
+li a:hover {
+    background-color: dodgerblue ;
+    color: white;
+}
+.icon{
+    font-size: 1.5em;
+    padding: 0 50px;
+    font-weight: bold;
+    font-family: 'Permanent Marker', cursive;
+    color: royalblue ;
+}
+
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+    padding:0;
+    border: 0;
+}
+
+ol{
+    counter-reset: li;
+    list-style: none;
+    *list-style: decimal;
+    font: 15px 'trebuchet MS', 'lucida sans';
+    padding: 0;
+    margin-bottom: 4em;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+
+.img{
+    width: 450px;
+}
+
+.welcome{
+    font-family: 'Permanent Marker', cursive;
+    color:royalblue;
+    font-size: 30px;
+}
+
+.rounded-list p{
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em 2em;
+    *padding: .4em;
+    margin: .5em 0;
+    background: #ddd;
+    color: #444;
+    text-decoration: none;
+    border-radius: .3em;
+    transition: all .3s ease-out;
+}
+
+.rounded-list p:hover{
+    background: #eee;
+}
+
+.rounded-list p:hover:before{
+    transform: rotate(360deg);
+}
+
+.rounded-list p:before{
+    content: counter(li);
+    counter-increment: li;
+    position: absolute;
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.3em;
+    background: #ffff66;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    border: .3em solid #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 2em;
+    transition: all .3s ease-out;
+}
+
+.list{
+    width: 400px;
+    display: inline-block;
+}
+
+
+.block{
+    display: inline-block;
+    width: 450px;
+    padding: 20px;
+}
+
+.container{
+    width: 1080px;
+    margin: 0 auto;
+}
