@@ -1,15 +1,18 @@
 package com.example.fitness_center.entity;
 
 import lombok.*;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import javax.persistence.*;
 import java.util.List;
 
-@Entity
 @Getter
 @Setter
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
+@Document
 public class Season_ticket {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,6 +20,6 @@ public class Season_ticket {
     private String season_name;
     private double price_per_day;
 
-    @OneToMany(mappedBy = "season_ticket", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @DBRef
     private List<User> users;
 }

@@ -1,19 +1,20 @@
 package com.example.fitness_center.entity;
 
 import lombok.*;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import javax.persistence.*;
 import java.util.List;
 import java.util.Set;
 
 
-@Entity
 @Getter
 @Setter
 @ToString
-@EqualsAndHashCode(of={"id"})
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="trainers")
+@Document
 public class Trainer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,11 +23,10 @@ public class Trainer {
     private String password;
     private String sport;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "specialization_id")
+    @DBRef
     private Specialization specialization;
 
-    @ManyToMany(mappedBy = "trainers")
+    @DBRef
     Set<User> users;
 
 }

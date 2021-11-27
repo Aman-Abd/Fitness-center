@@ -2,6 +2,8 @@ package com.example.fitness_center.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -10,37 +12,31 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
-@Entity
+
 @Getter
 @Setter
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="t_user")
+@Document
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long user_id;
     private String username;
     private String password;
-    @Transient
+    //@Transient
     private String passwordConfirm;
     private int days;
     private double cost ;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "season_id", insertable = true, updatable = false)
-    @JsonIgnore
+    @DBRef
     private Season_ticket season_ticket;
 
-    @ManyToMany
-    @JoinTable(
-            name = "user_trainers",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "trainer_id"))
+    @DBRef
     Set<Trainer> trainers;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @DBRef
     private Set<Role> roles;
 
     public Set<Role> getRoles() {

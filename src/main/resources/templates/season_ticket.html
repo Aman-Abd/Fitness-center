@@ -4,7 +4,7 @@
 <head>
     <link href="../static/css/price.css" rel="stylesheet"
           th:href="@{css/price.css}" media="screen">
-    <title>Orders</title>
+    <title>Session Tiket</title>
 </head>
 <body>
 <div sec:authorize="isAuthenticated()">
@@ -13,12 +13,12 @@
     </form>
     <nav>
         <ul>
-            <li><p class="icon">Drugstore</p> </li>
+            <li><p class="icon">Fitness</p> </li>
             <li><a href="/welcome">Home</a></li>
             <li><a href="/admin">Admin page</a></li>
-            <li><a href="/season_ticket">Orders</a></li>
-            <li><a href="/schedule">List of medicines</a></li>
-            <li><a href="/trainer">List of pharmacies</a></li>
+            <li><a href="/season_ticket">Season tickets</a></li>
+            <li><a href="/schedule">Schedule</a></li>
+            <li><a href="/trainer">Trainers</a></li>
             <li><a onclick="document.forms['logoutForm'].submit()">Logout</a></li>
         </ul>
     </nav>

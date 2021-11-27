@@ -14,12 +14,12 @@
     </form>
     <nav>
         <ul>
-            <li><p class="icon">Drugstore</p> </li>
+            <li><p class="icon">Fitness</p> </li>
             <li><a href="/welcome">Home</a></li>
             <li><a href="/admin">Admin page</a></li>
-            <li><a href="/season_ticket">Orders</a></li>
-            <li><a href="/schedule">List of medicines</a></li>
-            <li><a href="/trainer">List of pharmacies</a></li>
+            <li><a href="/season_ticket">Season tickets</a></li>
+            <li><a href="/schedule">Schedule</a></li>
+            <li><a href="/trainer">Trainers</a></li>
             <li><a onclick="document.forms['logoutForm'].submit()">Logout</a></li>
         </ul>
     </nav>
@@ -28,12 +28,10 @@
     <h2>The list of users</h2>
     <table>
         <tr class="darkgrey">
-        <th>ID</th>
         <th>UserName</th>
         <th>Password</th>
         </tr>
         <tr class="grey" th:each="user:${allUsers}">
-            <td th:text="${user.user_id}"></td>
             <td th:text="${user.username}"></td>
             <td th:text="${user.password}"></td>
         </tr>

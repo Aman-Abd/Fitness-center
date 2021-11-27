@@ -2,16 +2,16 @@ package com.example.fitness_center.entity;
 
 
 import lombok.*;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.*;
 
-@Entity
 @Getter
 @Setter
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="schedule")
+@Document
 public class Schedule {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
