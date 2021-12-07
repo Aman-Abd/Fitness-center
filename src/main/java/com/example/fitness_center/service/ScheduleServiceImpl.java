@@ -45,14 +45,14 @@ public class ScheduleServiceImpl implements ScheduleService{
     @PostConstruct
     private void InitializeUser(){
         List<Schedule> schedules = new ArrayList<>();
-        schedules.add(new Schedule(1L,"yoga","Tue/Fri 14:00",  5000.0, "John"));
-        schedules.add(new Schedule(2L,"hip-hop","Tue/Fri 14:00",  45000.0, "Jack"));
-        schedules.add(new Schedule(3L,"cycle","Tue/Fri 14:00",  7000.0, "Marta"));
-        schedules.add(new Schedule(4L,"box","Tue/Fri 14:00",  3000.0, "Elizabet"));
-        schedules.add(new Schedule(5L,"zumba","Tue/Fri 14:00",  2000.0, "Roy"));
-        schedules.add(new Schedule(6L,"karate","Tue/Fri 14:00",  5000.0, "Rey"));
-        schedules.add(new Schedule(7L,"gym","Tue/Fri 14:00",  6000.0, "Michael"));
-        schedules.add(new Schedule(8L,"crossfit","Tue/Fri 14:00",  8000.0, "Lara"));
+        schedules.add(new Schedule(1L,"Avanafil","Psychoactive substance, CNS stimulant. In terms of its pharmacological properties, it is almost identical to amphetamine. The period of action is 2-4 hours.",  5000.0, "C9H12FN"));
+        schedules.add(new Schedule(2L,"Zaleplon","psychoactive substance, CNS stimulant. In terms of its pharmacological properties, it is almost identical to amphetamine. The period of action is 2-4 hours.",  45000.0, "C9H12FN"));
+        schedules.add(new Schedule(3L,"Daratumumab","psychoactive substance, CNS stimulant. In terms of its pharmacological properties, it is almost identical to amphetamine. The period of action is 2-4 hours.",  7000.0, "C9H12FN"));
+        schedules.add(new Schedule(4L,"Agen","psychoactive substance, CNS stimulant. In terms of its pharmacological properties, it is almost identical to amphetamine. The period of action is 2-4 hours.",  3000.0, "C9H12FN"));
+        schedules.add(new Schedule(5L,"Dasabuvir","psychoactive substance, CNS stimulant. In terms of its pharmacological properties, it is almost identical to amphetamine. The period of action is 2-4 hours.",  2000.0, "C9H12FN"));
+        schedules.add(new Schedule(6L,"Zantac","psychoactive substance, CNS stimulant. In terms of its pharmacological properties, it is almost identical to amphetamine. The period of action is 2-4 hours.",  5000.0, "C9H12FN"));
+        schedules.add(new Schedule(7L,"Avastin","psychoactive substance, CNS stimulant. In terms of its pharmacological properties, it is almost identical to amphetamine. The period of action is 2-4 hours.",  6000.0, "C9H12FN"));
+        schedules.add(new Schedule(8L,"Daunorubicin","psychoactive substance, CNS stimulant. In terms of its pharmacological properties, it is almost identical to amphetamine. The period of action is 2-4 hours.",  8000.0, "C9H12FN"));
         scheduleRepositor.saveAll(schedules);
     }
 }

@@ -44,9 +44,9 @@ public class Season_ticketServiceImpl implements Season_ticketService {
     @PostConstruct
     private void InitializeUser(){
         List<Season_ticket> season_tickets = new ArrayList<>();
-        season_tickets.add(new Season_ticket(1L, "Classic", 100.0, null));
-        season_tickets.add(new Season_ticket(2L, "Medium", 200.0, null));
-        season_tickets.add(new Season_ticket(3L, "Premium", 250.0, null));
+        season_tickets.add(new Season_ticket(1L, "Lura (Levomepam)", 100.0, null));
+        season_tickets.add(new Season_ticket(2L, "John (Novoposit)", 200.0, null));
+        season_tickets.add(new Season_ticket(3L, "Rosa (Angisept)", 250.0, null));
 
         season_ticketRepositor.saveAll(season_tickets);
     }
